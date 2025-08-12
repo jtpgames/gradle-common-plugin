@@ -1,7 +1,6 @@
 package com.cognifide.gradle.common.build
 
 import com.cognifide.gradle.common.utils.Formats
-import com.cognifide.gradle.common.utils.toUpperSnakeCase
 import com.mitchellbosecke.pebble.PebbleEngine
 import com.mitchellbosecke.pebble.lexer.Syntax
 import com.mitchellbosecke.pebble.loader.StringLoader
@@ -18,7 +17,7 @@ class PropertyParser(anyProject: Project) {
      * @see <https://stackoverflow.com/a/11077282>
      */
     private fun find(name: String): String? {
-        val envValue: String? = System.getenv(name.toUpperSnakeCase())
+        val envValue: String? = System.getenv(name)
         if (envValue != null) {
             return envValue
         }
